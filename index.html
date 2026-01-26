@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KART CLASH — Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    
+    <main class="stage">
+      <section class="hero">
+        <div class="image-box">
+          <img src="background.jpg.jpeg" alt="Kart visual" />
+        </div>
+      </section>
+      <section class="form-wrap">
+        <form id="loginForm" class="login-card" autocomplete="off" method="post" name="google-sheet">
+          <h2>Player Login</h2>
+          <p class="subtitle">Enter details to join the KART CLASH arena</p>
+
+          <label class="field">
+            <span class="label">Full name</span>
+            <input
+              name="fullname"
+              type="text"
+              placeholder="e.g. Jay Patel"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span class="label">Mobile number</span>
+            <input
+              name="mobile"
+              type="tel"
+              placeholder="10-digit mobile"
+              pattern="[0-9]{10}"
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span class="label">Enrollment number</span>
+            <input
+              name="enroll"
+              type="text"
+              placeholder="Your College Enrollment No."
+              required
+            />
+          </label>
+
+          <label class="field">
+            <span class="label">Kart Clash ID</span>
+            <input
+              name="kartId"
+              type="text"
+              placeholder="Your Game Profile Name"
+              required
+            />
+          </label>
+
+          <div class="actions">
+            <button type="submit" class="btn primary">Submit</button>
+            <button type="button" id="cancelBtn" class="btn ghost">Cancel</button>
+          </div>
+
+          <p class="small">By continuing you agree to the arena rules.</p>
+        </form>
+      </section>
+    </main>
+
+    <div id="toast" class="toast hidden"></div>
+    
+    <footer class="footer">
+      <p><strong>MAIN LEADER:</strong> JAY PATEL</p>
+      <p><strong>CO-LEADER:</strong> PATEL MEET, PATEL NITIN, PATEL HARSHAL, SODHA PARTH</p>
+      <p><strong>CONTACT NUMBER:</strong> 9558510791</p>
+    </footer>
+    
+    <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxs_ymxjBBwXDUlcmv0OOP19FudNLWgVDBqeZFcKbCBP_WjfYcBlq0t7ylf3kKQPP7YUw/exec'
+            const form = document.forms['google-sheet']
+            const cancelBtn = document.getElementById('cancelBtn')
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              window.location.href = 'success.html'
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .catch(error => console.error('Error!', error.message))
+            })
+            
+            cancelBtn.addEventListener('click', () => {
+              form.reset()
+            })
+          </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

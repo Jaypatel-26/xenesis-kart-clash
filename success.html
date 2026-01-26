@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KART CLASH — Success</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .success-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      
+      .success-box {
+        background: linear-gradient(180deg, rgba(15,23,36,0.92), rgba(7,10,22,0.95));
+        border-radius: 14px;
+        padding: 40px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255,255,255,0.08);
+        max-width: 500px;
+        text-align: center;
+        animation: slideIn 0.6s ease-out;
+      }
+      
+      .success-box h1 {
+        margin: 0 0 20px;
+        font-family: Orbitron, Inter;
+        font-size: 28px;
+        color: #e6eef8;
+      }
+      
+      .success-box p {
+        margin: 0 0 30px;
+        font-size: 16px;
+        color: #9aa4b2;
+        line-height: 1.6;
+      }
+      
+      .success-message {
+        background: linear-gradient(90deg, #ff6b6b, #ffd24d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
+        font-size: 18px;
+        margin: 20px 0;
+      }
+      
+      .success-box .btn {
+        background: linear-gradient(90deg, #ff6b6b, #ffd24d);
+        color: #071022;
+        padding: 12px 30px;
+        border-radius: 10px;
+        border: 0;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 15px;
+        box-shadow: 0 8px 26px rgba(255,107,107,0.12);
+        transition: transform 0.3s ease;
+      }
+      
+      .success-box .btn:hover {
+        transform: scale(1.05);
+      }
+      
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="success-container">
+      <div class="success-box">
+        <h1>Success!</h1>
+        <p class="success-message">Thanks for submitting your details!</p>
+        <p>You have been registered for KART CLASH. Get ready to race!</p>
+        <button class="btn" onclick="window.location.href='index.html'">Back to Login</button>
+      </div>
+    </div>
+  </body>
+</html>
